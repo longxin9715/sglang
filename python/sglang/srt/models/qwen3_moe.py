@@ -1183,6 +1183,10 @@ class Qwen3MoeForCausalLM(nn.Module):
                 }
             )
 
+    @property
+    def routed_experts_weights_of_layer(self):
+        return self._routed_experts_weights_of_layer.value
+
     @classmethod
     def get_model_config_for_expert_location(cls, config):
         return ModelConfigForExpertLocation(
